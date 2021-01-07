@@ -77,8 +77,8 @@ spec:
                 withCredentials([usernamePassword(credentialsId: "${harbor_auth}", passwordVariable: 'password', usernameVariable: 'username')]) {
                 sh """
                   echo '
-                    FROM ${registry}/library/tomcat:v1
-                    LABEL maitainer lizhenliang
+                    FROM library/tomcat
+                    LABEL maitainer jinchenghe
                     RUN rm -rf /usr/local/tomcat/webapps/*
                     ADD target/*.war /usr/local/tomcat/webapps/ROOT.war
                   ' > Dockerfile
@@ -93,11 +93,11 @@ spec:
           steps {
               configFileProvider([configFile(fileId: "${k8s_auth}", targetLocation: 'admin.kubeconfig')]) {
                 sh """
-				          chmod +x /usr/bin/kubectl
-				          sed -i 's#IMAGE_NAME#${image_name}#' deploy.yaml
-				          sed -i 's#SECRET_NAME#${secret_name}#' deploy.yaml
-				          sed -i 's#REPLICAS#${ReplicaCount}#' deploy.yaml
-				          kubectl apply -f deploy.yaml -n ${Namespace} --kubeconfig=admin.kubeconfig
+		  chmod +x /usr/bin/kubectl
+		  sed -i 's#IMAGE_NAME#${image_name}#' deploy.yaml
+		  sed -i 's#SECRET_NAME#${secret_name}#' deploy.yaml
+		  sed -i 's#REPLICAS#${ReplicaCount}#' deploy.yaml
+		  kubectl apply -f deploy.yaml -n ${Namespace} --kubeconfig=admin.kubeconfig
                 """
               }
           }
