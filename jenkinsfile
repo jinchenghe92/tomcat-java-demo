@@ -3,7 +3,7 @@ def registry = "registry.cn-beijing.aliyuncs.com"
 // 项目
 def project = "library04"
 def app_name = "java-demo"
-def image_name = "${registry}/${project}/${app_name}:8"
+def image_name = "${registry}/${project}/${app_name}:${BUILD_NUMBER}"
 def git_address = "https://github.com/jinchenghe92/tomcat-java-demo.git"
 // 认证
 def secret_name = "harbor-aliyun-beijing"
