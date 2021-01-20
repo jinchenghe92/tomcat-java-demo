@@ -4,11 +4,11 @@ def registry = "registry.cn-beijing.aliyuncs.com"
 def project = "library04"
 def app_name = "java-demo"
 def image_name = "${registry}/${project}/${app_name}:8"
-def git_address = "http://192.168.247.10/djpols/java-demo.git"
+def git_address = "https://github.com/jinchenghe92/tomcat-java-demo.git"
 // 认证
 def secret_name = "harbor-aliyun-beijing"
 def harbor_auth = "a263cd19-3861-412d-9ea1-cf332c084b68"
-def git_auth = "cf6ca884-e86b-4eca-8712-fc06b0f6aed9"
+def git_auth = "e7871171-cf7a-4a07-b786-c241527771c0"
 def k8s_auth = "27bd8ed5-aff9-420d-b5cd-6a3760ace1a9"
 
 pipeline {
