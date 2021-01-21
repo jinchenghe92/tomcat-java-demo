@@ -44,7 +44,7 @@
         <script src="../js/index.js"></script>
         <script type="text/javascript">
         	 $('.title').typeIt({
-           	  whatToType: "用户信息存储系统demo！",
+           	  whatToType: "哈哈哈123！",
               typeSpeed: 300,
               lifeLike: true,
               breakLines :true
